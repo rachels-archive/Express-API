@@ -1,11 +1,13 @@
 // @desc Get all contacts
 // @route GET /api/contacts
 // @access public
-
 export const getAllContacts = (req, res) => {
   res.status(200).json({ message: "Contacts List" });
 };
 
+// @desc Get a contact by id
+// @route GET /api/contacts/:id
+// @access public
 export const getContactById = (req, res) => {
   const contactId = req.params.id;
   if (contactId) {
@@ -15,15 +17,24 @@ export const getContactById = (req, res) => {
   }
 };
 
+// @desc Add a contact
+// @route POST /api/contacts
+// @access public
 export const createContact = (req, res) => {
   res.status(201).json({ message: "Contact successfully created" });
 };
 
+// @desc Update a contact
+// @route PUT /api/contacts
+// @access public
 export const updateContact = (req, res) => {
   const contactId = req.params.id;
   res.status(200).json({ message: `Updated Contact for ${contactId}` });
 };
 
+// @desc Delete a contact
+// @route DELETE /api/contacts
+// @access public
 export const deleteContact = (req, res) => {
   res.status(204).send();
 };
