@@ -1,0 +1,19 @@
+{
+  "name": "contacts-backend-api",
+  "version": "1.0.0",
+  "description": "Express project for contacts backend api",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rachels-archive/Express-API.git"
+  },
+  "author": "Rachel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rachels-archive/Express-API/issues"
+  },
+  "homepage": "https://github.com/rachels-archive/Express-API#readme"
+}
