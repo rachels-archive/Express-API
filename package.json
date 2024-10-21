@@ -4,6 +4,7 @@
   "description": "Express project for contacts backend api",
   "main": "server.js",
   "scripts": {
+    "start": "node --watch --env-file=.env server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/rachels-archive/Express-API/issues"
   },
-  "homepage": "https://github.com/rachels-archive/Express-API#readme"
+  "homepage": "https://github.com/rachels-archive/Express-API#readme",
+  "dependencies": {
+    "express": "^4.21.1"
+  }
 }
