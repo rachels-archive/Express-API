@@ -13,12 +13,11 @@ export const getAllContacts = asyncHandler(async (req, res) => {
 // @route GET /api/contacts/:id
 // @access public
 export const getContactById = asyncHandler(async (req, res) => {
-  const contactId = req.params.id;
-  if (contactId) {
-    res.status(200).json({ message: `Get Contact for ${contactId}` });
-  } else {
-    res.status(400).json({ message: "Contact not found" });
+  const contact = await Contact.findById(req.params.id);
+  if (!contact) {
+    res.status(404).json({ message: "Contact Not Found!" });
   }
+  res.status(200).json(contact);
 });
 
 // @desc Add a contact
@@ -28,8 +27,7 @@ export const createContact = asyncHandler(async (req, res) => {
   const { name, email, phone } = req.body;
 
   if (!name || !email || !phone) {
-    res.status(400);
-    throw new Error("All fields required");
+    res.status(400).json({ message: "All fields are required!" });
   }
 
   const contact = await Contact.create({
