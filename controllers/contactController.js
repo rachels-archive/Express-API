@@ -43,8 +43,14 @@ export const createContact = asyncHandler(async (req, res) => {
 // @route PUT /api/contacts
 // @access public
 export const updateContact = asyncHandler(async (req, res) => {
-  const contactId = req.params.id;
-  res.status(200).json({ message: `Updated Contact for ${contactId}` });
+  const contact = await Contact.findById(req.params.id);
+
+  if (!contact) {
+    res.status(404).json({ message: "Contact Not Found!" });
+  }
+
+  const updatedContact = await Contact.findByIdAndUpdate(req.params.id, req.body, { new: true });
+  res.status(200).json(updatedContact);
 });
 
 // @desc Delete a contact
