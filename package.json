@@ -20,6 +20,8 @@
   "homepage": "https://github.com/rachels-archive/Express-API#readme",
   "dependencies": {
     "express": "^4.21.1",
-    "express-async-handler": "^1.2.0"
+    "express-async-handler": "^1.2.0",
+    "mongodb": "^6.10.0",
+    "mongoose": "^8.7.2"
   }
 }

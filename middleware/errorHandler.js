@@ -1,4 +1,4 @@
-import { constants } from "../constants";
+import { constants } from "../constants.js";
 
 export const errorHandler = (err, req, res, next) => {
   const statusCode = res.statusCode ? res.statusCode : 500;

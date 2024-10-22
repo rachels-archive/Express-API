@@ -1,7 +1,9 @@
 import express from "express";
 import contactRouter from "./routes/contactRouter.js";
 import { errorHandler } from "./middleware/errorHandler.js";
+import { connectDb } from "./config/dbConnection.js";
 
+connectDb();
 const app = express();
 const PORT = process.env.PORT || 8000;
 
