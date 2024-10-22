@@ -1,10 +1,12 @@
 import asyncHandler from "express-async-handler";
+import Contact from "../models/contactModel.js";
 
 // @desc Get all contacts
 // @route GET /api/contacts
 // @access public
 export const getAllContacts = asyncHandler(async (req, res) => {
-  res.status(200).json({ message: "Contacts List" });
+  const contacts = await Contact.find();
+  res.status(200).json(contacts);
 });
 
 // @desc Get a contact by id
@@ -30,7 +32,13 @@ export const createContact = asyncHandler(async (req, res) => {
     throw new Error("All fields required");
   }
 
-  res.status(201).json({ message: "Contact successfully created" });
+  const contact = await Contact.create({
+    name,
+    email,
+    phone,
+  });
+
+  res.status(201).json(contact);
 });
 
 // @desc Update a contact
