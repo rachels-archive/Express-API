@@ -6,7 +6,6 @@ import jwt from "jsonwebtoken";
 // @desc Register a user
 // @route POST /api/users/register
 // @access public
-
 const passwordStrengthValidator = (password) => {
   const minLength = 8;
   const hasNumbers = /\d/.test(password);
@@ -82,5 +81,5 @@ export const loginUser = asyncHandler(async (req, res) => {
 // @route GET /api/users/login
 // @access private
 export const currentUser = asyncHandler(async (req, res) => {
-  res.status(200).json({ message: "Curreny user info" });
+  res.json({ message: "Current user info" });
 });
