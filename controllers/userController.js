@@ -81,5 +81,5 @@ export const loginUser = asyncHandler(async (req, res) => {
 // @route GET /api/users/login
 // @access private
 export const currentUser = asyncHandler(async (req, res) => {
-  res.json({ message: "Current user info" });
+  res.json(req.user);
 });
